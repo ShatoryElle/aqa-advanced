@@ -1,9 +1,16 @@
 const users = [
-    { name: "Андрій", email: "andrii30@gmail.com", age: 30 },
-    { name: "Олена", email: "olena22@gmail.com", age: 22 },
-    { name: "Іван", email: "ivan28@gmail.com", age: 28 }
+    { name: "Андрій", email: "andrii@test.com", age: 30 },
+    { name: "Олена", age: 22 }, 
+    { name: "Іван", email: "ivan@test.com" }, 
+    { status: "active" } 
 ];
 
-for (const { name, email, age } of users) {
-    console.log(`Ім'я: ${name}, Email: ${email}, Вік: ${age}`);
+for (const user of users) {
+    const { 
+        name = "Unknown Name", 
+        email = "no-email@example.com", 
+        age = "age not specified" 
+    } = user;
+
+    console.log(`User Info: Name: ${name}, Email: ${email}, Age: ${age}`);
 }
